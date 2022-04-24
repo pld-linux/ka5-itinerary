@@ -12,7 +12,7 @@ Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	229fdb54fc4c9454ad7a5f1a9f647c4e
+# Source0-md5:	ada94d7a8a5dd1d6d32250481956c09e
 URL:		https://community.kde.org/
 BuildRequires:	Qt5DBus-devel >= 5.15.2
 BuildRequires:	Qt5Gui-devel >= 5.15.2

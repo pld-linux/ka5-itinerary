@@ -8,7 +8,7 @@
 Summary:	Itinerary and boarding pass management application
 Name:		ka5-%{kaname}
 Version:	22.04.1
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -105,6 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/itinerary
 %attr(755,root,root) %{_libdir}/libSolidExtras.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/itinerarythumbnail.so
+%dir %{_libdir}/qt5/qml/org/kde/solidextras
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/solidextras/libsolidextrasqmlplugin.so
 %{_libdir}/qt5/qml/org/kde/solidextras/qmldir
 %{_desktopdir}/org.kde.itinerary.desktop

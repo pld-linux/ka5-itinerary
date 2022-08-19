@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.3
+%define		kdeappsver	22.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		itinerary
 Summary:	Itinerary and boarding pass management application
 Name:		ka5-%{kaname}
-Version:	22.04.3
+Version:	22.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	de61664b05ae6538e523530aa2b8ab59
+# Source0-md5:	711a8c9bef7704eccec020caa65616ad
 URL:		https://community.kde.org/
 BuildRequires:	Qt5DBus-devel >= 5.15.2
 BuildRequires:	Qt5Gui-devel >= 5.15.2
@@ -114,3 +114,20 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/itinerarythumbnail.desktop
 %{_datadir}/metainfo/org.kde.itinerary.appdata.xml
 %{_datadir}/qlogging-categories5/org_kde_itinerary.categories
+%{_libdir}/qt5/plugins/kf5/kfilemetadata/kfilemetadata_itineraryextractor.so
+%dir %{_libdir}/qt5/qml/org/kde/itinerary
+%dir %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons
+%dir %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/ClockElement.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/ClockFace.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DateInput.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DatePicker.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DatePopup.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DesktopDateInput.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/Hand.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/MobileDateInput.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/TimeInput.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/TimeLabel.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/TimePicker.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/libitinerary-dateandtimeplugin.so
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/qmldir

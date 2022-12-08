@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.3
+%define		kdeappsver	22.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		itinerary
 Summary:	Itinerary and boarding pass management application
 Name:		ka5-%{kaname}
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	426857f6955798968a1cba60e45b9510
+# Source0-md5:	ce41470f8b21781d5d13a6f656e4e6ed
 URL:		https://community.kde.org/
 BuildRequires:	Qt5DBus-devel >= 5.15.2
 BuildRequires:	Qt5Gui-devel >= 5.15.2
@@ -104,30 +104,30 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.md
 %attr(755,root,root) %{_bindir}/itinerary
 %attr(755,root,root) %{_libdir}/libSolidExtras.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/itinerarythumbnail.so
 %dir %{_libdir}/qt5/qml/org/kde/solidextras
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/solidextras/libsolidextrasqmlplugin.so
 %{_libdir}/qt5/qml/org/kde/solidextras/qmldir
 %{_desktopdir}/org.kde.itinerary.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.kde.itinerary.svg
 %{_datadir}/knotifications5/itinerary.notifyrc
-%{_datadir}/kservices5/itinerarythumbnail.desktop
 %{_datadir}/metainfo/org.kde.itinerary.appdata.xml
 %{_datadir}/qlogging-categories5/org_kde_itinerary.categories
 %{_libdir}/qt5/plugins/kf5/kfilemetadata/kfilemetadata_itineraryextractor.so
 %dir %{_libdir}/qt5/qml/org/kde/itinerary
 %dir %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons
 %dir %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime
-%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/ClockElement.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/ClockFace.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DateInput.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DatePicker.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DatePopup.qml
-%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/DesktopDateInput.qml
-%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/Hand.qml
-%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/MobileDateInput.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/TimeInput.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/TimeLabel.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/TimePicker.qml
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/libitinerary-dateandtimeplugin.so
 %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/qmldir
+%{_libdir}/qt5/plugins/kf5/thumbcreator/itinerarythumbnail.so
+%dir %{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/private
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/private/ClockElement.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/private/DesktopDateInput.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/private/Hand.qml
+%{_libdir}/qt5/qml/org/kde/itinerary/kirigamiaddons/dateandtime/private/MobileDateInput.qml

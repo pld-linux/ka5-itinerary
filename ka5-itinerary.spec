@@ -57,6 +57,7 @@ BuildRequires:	kf5-kwidgetsaddons-devel >= 5.93.0
 BuildRequires:	kf5-kxmlgui-devel >= 5.93.0
 BuildRequires:	kf5-networkmanager-qt-devel >= 5.88
 BuildRequires:	kf5-qqc2-desktop-style-devel >= 5.88
+BuildRequires:	kirigami-addons-devel
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	qt5-build >= %{qtver}

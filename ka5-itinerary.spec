@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.3
+%define		kdeappsver	23.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		itinerary
 Summary:	Itinerary and boarding pass management application
 Name:		ka5-%{kaname}
-Version:	23.04.3
+Version:	23.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d1449ecb11215905993ec3327b50d4f0
+# Source0-md5:	d61c6b04236ce4bbc7e83ad22d22d9b6
 URL:		https://community.kde.org/
 BuildRequires:	Qt5DBus-devel >= 5.15.2
 BuildRequires:	Qt5Gui-devel >= 5.15.2
@@ -24,7 +24,7 @@ BuildRequires:	Qt5Quick-controls2-devel
 BuildRequires:	Qt5Quick-devel
 BuildRequires:	Qt5Test-devel
 BuildRequires:	Qt5Widgets-devel >= 5.15.2
-BuildRequires:	cmake >= 3.5
+BuildRequires:	cmake >= 3.20
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel
 BuildRequires:	gettext-devel
@@ -57,7 +57,7 @@ BuildRequires:	kf5-kwidgetsaddons-devel >= 5.93.0
 BuildRequires:	kf5-kxmlgui-devel >= 5.93.0
 BuildRequires:	kf5-networkmanager-qt-devel >= 5.88
 BuildRequires:	kf5-qqc2-desktop-style-devel >= 5.88
-BuildRequires:	kirigami-addons-devel
+BuildRequires:	kirigami-addons-devel >= 0.9
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	qt5-build >= %{qtver}
@@ -76,18 +76,16 @@ Itinerary and boarding pass management application.
 %setup -q -n %{kaname}-%{version}
 
 %build
-install -d build
-cd build
 %cmake \
+	-B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	..
-%ninja_build
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+%ninja_build -C build
 
 %if %{with tests}
-ctest
+ctest --test-dir build
 %endif
 
 
